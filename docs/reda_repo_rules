@@ -1,0 +1,9 @@
+1. when you name a file: "author_<blabla>". e.g. this very file: reda_repo_rules
+2. branch names: main [the branch of the proj] (no commits to it until PR and code review has been done properly)
+    other branches: feature branches : "feat_<blabla>". whenever one is working on a feature of any kind, they should create
+        a branch and  follow the proper rules for merging with the main branch once the work has been completed
+                    bug branches: if we ever come across critical bugs which we need to fix, it should done so in a separate
+        branch as fast as possible before incorporating said fix into the main branch
+3. all commits must be signed by a gpg key that's already been added to github's keyring. there will be 2 keys ... TBC
+4. we only commit major milestones within the features and/or bugs we are working on as to not clutter our commmit history
+5. we also need to predefine certain milestones for the project, something like: finishing the dockerfile etc and for their associated commits I suggest we make them into tags with nice descriptive names [e.g. dockerfile completed or v0.9 ...]

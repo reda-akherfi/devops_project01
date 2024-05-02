@@ -1,0 +1,15 @@
+
+
+skills:
+    1. docker: docker-compose: write our own images
+    2. debian 12
+    3. makefile
+    4. TLS v1.2,3
+    5. images: nginx, WordPress + php-fpm, mariadb, 
+    6. volumes: WordPress + php-fpm, mariadb, 
+    7. docker-network between the 3.
+Your containers have to restart in case of a crash.
+
+
+
+
