@@ -43,10 +43,25 @@ debian_docker_install() {
 docker_post_install() {
     # verifying the health of our installation
     docker run hello-world
-    # to add in here:
-    #   how to manage docker as a non-root user [the docker group]
     #   systemd stuff [enable and such]
     #   setting up the logging mechanism for docker
+
+    # stopping the need fo sudo for a privileged user [security implications to be tackled later on!!!!!]
+    # this command will return 9 if the group exists + some stderr lines
+    groupadd docker 2> /dev/null
+    usermod -aG docker $(whoami)
+    # normally, we need to log out and back in for a group change to take effect 
+    # but since we are scripting... [see man newgrp --> kind of interesting]
+    newgrp docker
+    # the ~/.docker/ dir sometimes gives up trouble; and since it is a `virgin` docker  installation....
+    rm -rf ~/.docker/
+
+    # setting up docker to run at boot
+    # by default on debian, all services are enables but to remain on the safe side ...
+    systemctl enable docker.service containerd.service
+    # XXX: we might want to explore docker.socket [keeps docker dorminant till you poke it with socket activation]
+
+
 }
 
 
