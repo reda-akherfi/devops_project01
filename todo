@@ -1,0 +1,12 @@
+1- create dockerfiles for 3 CTs. 
+    a. the nginx reverse proxy.
+    b. the django container with all its stuff [uwsgi; nginx; python; venv .....]
+    c. the db CT.
+2- set up the networking for the trio
+3- finalizing the whole setup using bash scripts, docker-compose and kvm deployment magic.
+4- moving the dev env [the deb host; CTs....] to proxmox creating a devops pipeline....
+5- start working of the django app:
+    python for high level stuff and c++ for the underlying data structures....
+6- I need a domain name from a registrar; let's encrypt + DDNS .... I hate that stuff
+...TBC
+
